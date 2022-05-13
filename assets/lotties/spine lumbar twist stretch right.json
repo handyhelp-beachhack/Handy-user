@@ -1,0 +1,159 @@
+[{
+  "version": "1.0",
+  "image": {
+    "name": "/home/videosdownloader/public_html/image/public/uploadt/spine lumbar twist stretch right.jpg",
+    "baseName": "spine lumbar twist stretch right.jpg",
+    "format": "JPEG",
+    "formatDescription": "JPEG",
+    "mimeType": "image/jpeg",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 1280,
+      "height": 720,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 96,
+      "y": 96
+    },
+    "printSize": {
+      "x": 13.3333,
+      "y": 7.5
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColor",
+    "baseType": "Undefined",
+    "endianness": "Undefined",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "red": 8,
+      "green": 8,
+      "blue": 1
+    },
+    "pixels": 2764800,
+    "imageStatistics": {
+      "Overall": {
+        "min": 0,
+        "max": 255,
+        "mean": 240.174,
+        "median": 251.333,
+        "standardDeviation": 8813.06,
+        "kurtosis": 18.7427,
+        "skewness": -4.22271,
+        "entropy": 0.394896
+      }
+    },
+    "channelStatistics": {
+      "red": {
+        "min": 1,
+        "max": 255,
+        "mean": 239.259,
+        "median": 251,
+        "standardDeviation": 9213.94,
+        "kurtosis": 19.9323,
+        "skewness": -4.48168,
+        "entropy": 0.403395
+      },
+      "green": {
+        "min": 9,
+        "max": 255,
+        "mean": 243.454,
+        "median": 253,
+        "standardDeviation": 8432.42,
+        "kurtosis": 18.668,
+        "skewness": -4.15448,
+        "entropy": 0.385845
+      },
+      "blue": {
+        "min": 0,
+        "max": 255,
+        "mean": 237.809,
+        "median": 250,
+        "standardDeviation": 8792.82,
+        "kurtosis": 17.3254,
+        "skewness": -4.02269,
+        "entropy": 0.395448
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "matteColor": "#BDBDBD",
+    "backgroundColor": "#FFFFFF",
+    "borderColor": "#DFDFDF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 1280,
+      "height": 720,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "compression": "JPEG",
+    "quality": 90,
+    "orientation": "TopLeft",
+    "properties": {
+      "date:create": "2022-05-05T08:14:46+00:00",
+      "date:modify": "2022-05-05T08:14:46+00:00",
+      "exif:ColorSpace": "1",
+      "exif:DateTime": "2022:05:05 13:42:43",
+      "exif:DateTimeDigitized": "2022:05:05 13:11:00",
+      "exif:DateTimeOriginal": "2022:05:05 13:11:00",
+      "exif:ExifOffset": "2242",
+      "exif:Software": "Windows Photo Editor 10.0.10011.16384",
+      "exif:SubSecTimeDigitized": "00",
+      "exif:SubSecTimeOriginal": "00",
+      "exif:thumbnail:Compression": "6",
+      "exif:thumbnail:JPEGInterchangeFormat": "4516",
+      "exif:thumbnail:JPEGInterchangeFormatLength": "3605",
+      "exif:thumbnail:ResolutionUnit": "2",
+      "exif:thumbnail:XResolution": "96/1",
+      "exif:thumbnail:YResolution": "96/1",
+      "jpeg:colorspace": "2",
+      "jpeg:sampling-factor": "2x2,1x1,1x1",
+      "signature": "9b39a7ddc55dee19600dfaea25034a3ebb577dca28e9f36fd4285573ff29dc30",
+      "unknown": "Windows Photo Editor 10.0.10011.16384",
+      "xmp:CreateDate": "2022-05-05T13:11:00",
+      "xmp:CreatorTool": "Windows Photo Editor 10.0.10011.16384"
+    },
+    "profiles": {
+      "exif": {
+        "length": 8128
+      },
+      "xmp": {
+        "length": 12741
+      }
+    },
+    "tainted": false,
+    "filesize": "62569B",
+    "numberPixels": "921600",
+    "pixelsPerSecond": "35.8597MB",
+    "userTime": "0.020u",
+    "elapsedTime": "0:01.025",
+    "version": "ImageMagick 7.0.10-58 Q16 x86_64 2021-01-14 https://imagemagick.org"
+  }
+}]

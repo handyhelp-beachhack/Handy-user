@@ -1,0 +1,132 @@
+[{
+  "version": "1.0",
+  "image": {
+    "name": "/home/videosdownloader/public_html/image/public/uploadt/side lying floor stretch.jpg",
+    "baseName": "side lying floor stretch.jpg",
+    "format": "JPEG",
+    "formatDescription": "JPEG",
+    "mimeType": "image/jpeg",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 320,
+      "height": 242,
+      "x": 0,
+      "y": 0
+    },
+    "units": "Undefined",
+    "type": "TrueColor",
+    "baseType": "Undefined",
+    "endianness": "Undefined",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "red": 8,
+      "green": 8,
+      "blue": 1
+    },
+    "pixels": 232320,
+    "imageStatistics": {
+      "Overall": {
+        "min": 0,
+        "max": 255,
+        "mean": 230.711,
+        "median": 255,
+        "standardDeviation": 13378.8,
+        "kurtosis": 6.99661,
+        "skewness": -2.75818,
+        "entropy": 0.532514
+      }
+    },
+    "channelStatistics": {
+      "red": {
+        "min": 0,
+        "max": 255,
+        "mean": 226.35,
+        "median": 255,
+        "standardDeviation": 14778.4,
+        "kurtosis": 5.52097,
+        "skewness": -2.54853,
+        "entropy": 0.549982
+      },
+      "green": {
+        "min": 0,
+        "max": 255,
+        "mean": 231.999,
+        "median": 255,
+        "standardDeviation": 12739.6,
+        "kurtosis": 8.08851,
+        "skewness": -2.89796,
+        "entropy": 0.547542
+      },
+      "blue": {
+        "min": 0,
+        "max": 255,
+        "mean": 233.784,
+        "median": 255,
+        "standardDeviation": 12618.3,
+        "kurtosis": 7.51814,
+        "skewness": -2.82422,
+        "entropy": 0.500017
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "matteColor": "#BDBDBD",
+    "backgroundColor": "#FFFFFF",
+    "borderColor": "#DFDFDF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 320,
+      "height": 242,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "compression": "JPEG",
+    "quality": 94,
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2022-05-05T08:59:18+00:00",
+      "date:modify": "2022-05-05T08:59:18+00:00",
+      "exif:Software": "Google",
+      "jpeg:colorspace": "2",
+      "jpeg:sampling-factor": "1x1,1x1,1x1",
+      "signature": "d7e66b2562b3410fcaf211f457041eeebdbcf36da050bad90e6022a8b3abdc0e"
+    },
+    "profiles": {
+      "exif": {
+        "length": 40
+      }
+    },
+    "tainted": false,
+    "filesize": "13134B",
+    "numberPixels": "77440",
+    "pixelsPerSecond": "20.2127MB",
+    "userTime": "0.000u",
+    "elapsedTime": "0:01.003",
+    "version": "ImageMagick 7.0.10-58 Q16 x86_64 2021-01-14 https://imagemagick.org"
+  }
+}]

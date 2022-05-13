@@ -1,0 +1,501 @@
+{
+    "fullbody1":
+            [
+                {
+                  "title":"Full Body ",
+                  "time":" 10 min"  
+                },
+                {
+                    "id":"0",
+                    "url":"jumpingjacks.json",
+                    "detail":"20 second jumping jacks",
+                    "title":"jumping jacks",
+                    "time":"20",
+                    "type":"time"
+                },
+                {
+                    "id":"1",
+                    "url":"inclinepushup.json",
+                    "detail":"6 inclined pushup",
+                    "title":"incline push-ups",
+                    "type":"count",
+                    "time":"x6"
+                },
+                {
+                    "id":"2",
+                    "url":"kneepushup.json",
+                    "detail":"4 knee pushups",
+                    "title":"knee push-ups",
+                    "type":"count",
+                    "time":"x4"
+                },
+                {
+                    "id":"3",
+                    "url":"pushup.json",
+                    "detail":"4 pushups",
+                    "title":"push-ups",
+                    "type":"count",
+                    "time":"x4"
+                },
+                {   
+                    "id":"4",
+                    "url":"widearmpushup.json",
+                    "detail":"4 wide arm pushups",
+                    "title":"wide arm push-ups",
+                    "type":"count",
+                    "time":"x4"
+    
+                },
+                {
+                    "id":"5",
+                    "url":"inclinepushup.json",
+                    "detail":"6 incline pushups",
+                    "title":"incline push-ups",
+                    "type":"count",
+                    "time":"x6"
+                },
+                {
+                    "id":"6",
+                    "url":"kneepushup.json",
+                    "detail":"4 knee pushups",
+                    "title":"knee push-ups",
+                    "type":"count",
+                    "time":"x4"
+                },
+                {
+                    "id":"7",
+                    "url":"pushup.json",
+                    "title":"push-ups",
+                    "detail":"4 pushups",
+                    "type":"count",
+                    "time":"x4"
+                },
+                {   
+                    "id":"8",
+                    "url":"widearmpushup.json",
+                    "title":"wide arm push-ups",
+                    "detail":"4 wide arm pushups",
+                    "type":"count",
+                    "time":"x4"
+    
+                },
+                {   
+                    "id":"9",
+                    "url":"cobrastretch.json",
+                    "detail":"20 sec cobrastretch",
+                    "title":"cobra stretch",
+                    "type":"time",
+                    "time":"20"
+    
+                }
+    
+            ],
+            "fullbody2":[
+                {
+                    "title":"Full Body ",
+                  "time":" 16 min"  
+                },
+                {
+                    "url":"abdominal crutches.json",
+                    "detail":"10 abdominal crutches",
+                    "title":"abdominal crutches",
+                    "type":"count",
+                    "time":"x10"
+                },
+                {
+                    "url":"russiantwist.json",
+                    "detail":"12 russian twist",
+                    "title":"russian twist",
+                    "type":"count",
+                    "time":"x12"
+                },
+                {
+                    "url":"heel touch.json",
+                    "detail":"16 heel touch ",
+                    "title":"Heel touch",
+                    "time":"x16",
+                    "type":"count"
+
+                },
+                {
+                    "url":"mountain climber.json",
+                    "detail":"12 mountain climber",
+                    "title":"mountain climber",
+                    "time":"x12",
+                    "type":"count"
+                },
+                {
+                    "url":"leg raises.json",
+                    "detail":"12 90 degree leg raises",
+                    "title":"leg raises",
+                    "time":"x12",
+                    "type":"count"
+                },
+                {
+                    "url":"abdominal crutches.json",
+                    "detail":"10 abdominal crutches",
+                    "title":"abdominal crutches",
+                    "type":"count",
+                    "time":"x12"
+                },
+                {
+                    "url":"russiantwist.json",
+                    "detail":"12 russian twist",
+                    "title":"russian twist",
+                    "type":"count",
+                    "time":"x12"
+                },
+               
+                {
+                    "url":"heel touch.json",
+                    "detail":"16 heel touch ",
+                    "title":"Heel touch",
+                    "time":"x16",
+                    "type":"count"
+
+                },
+                {
+                    "url":"mountain climber.json",
+                    "detail":"12 mountain climber",
+                    "title":"mountain climber",
+                    "time":"x12",
+                    "type":"count"
+                },
+                {
+                    "url":"leg raises.json",
+                    "detail":"12 90 degree leg raises",
+                    "title":"leg raises",
+                    "time":"x12",
+                    "type":"count"
+                },
+                {   
+                    "id":"8",
+                    "url":"widearmpushup.json",
+                    "title":"wide arm push-ups",
+                    "detail":"4 wide arm pushups",
+                    "type":"count",
+                    "time":"x4"
+    
+                },
+                {   
+                    "id":"9",
+                    "url":"cobrastretch.json",
+                    "detail":"20 sec cobrastretch",
+                    "title":"cobra stretch",
+                    "type":"time",
+                    "time":"20"
+    
+                }
+               
+            ],
+           "absbeginner":[
+            {
+                "title":"abs workout ",
+                "time":" 10 min"  
+              },
+               {
+                   "url":"jumpingjacks.json",
+                   "details":"20 sec jumping jacks",
+                   "title":"jumping jacks",
+                   "time":"20",
+                   "type":"time"
+
+               },
+               {
+                   "url":"abdominal crutches.json",
+                   "details":"16 abdomianl crutches.json",
+                   "title":"abdominal crutches",
+                   "time":"x16",
+                   "type":"count"
+               },
+               {
+                   "url":"russiantwist.json",
+                   "detail":"20 russian twist",
+                   "title":"russian twist",
+                   "time":"x20",
+                   "type":"count"
+               },
+               {
+                   "url":"mountain climber.json",
+                   "detail":"16 mountain climber",
+                   "title":"mountain climber",
+                   "time":"x16",
+                   "type":"count"
+               },{
+                   "url":"heel touch.json",
+                   "detail":"20 heel touch",
+                   "title":"heel touch",
+                   "time":"x20",
+                   "type":"count"
+               },{
+                    "url":"leg raises.json",
+                    "detail":"16 leg raises",
+                    "title":"leg raises",
+                    "time":"20",
+                    "type":"time"
+               },
+               {
+                "url":"jumpingjacks.json",
+                "details":"20 sec jumping jacks",
+                "title":"jumping jacks",
+                "time":"20",
+                "type":"time"
+
+            },
+            {
+                "url":"abdominal crutches.json",
+                "details":"16 abdomianl crutches.json",
+                "title":"abdominal crutches",
+                "time":"x16",
+                "type":"count"
+            },
+            {
+                "url":"russiantwist.json",
+                "detail":"20 russian twist",
+                "title":"russian twist",
+                "time":"x20",
+                "type":"count"
+            },
+            {
+                "url":"mountain climber.json",
+                "detail":"16 mountain climber",
+                "title":"mountain climber",
+                "time":"x16",
+                "type":"count"
+            },{
+                "url":"heel touch.json",
+                "detail":"20 heel touch",
+                "title":"heel touch",
+                "time":"x20",
+                "type":"count"
+            },{
+                 "url":"leg raises.json",
+                 "detail":"16 leg raises",
+                 "title":"leg raises",
+                 "time":"20",
+                 "type":"time"
+            }
+           ],
+           "chestbeginner":[
+            {
+                "title":"chest workout",
+                "time":" 10 min"  
+              },
+               { "url":"jumpingjacks.json",
+                "details":"30 sec jumping jacks",
+                "title":"jumping jacks",
+                "time":"30",
+                "type":"time"
+
+               },
+               {
+                
+                "url":"inclinepushup.json",
+                "detail":"6 inclined pushup",
+                "title":"incline push-ups",
+                "type":"count",
+                "time":"x6"
+            },
+            {
+                "id":"2",
+                "url":"kneepushup.json",
+                "detail":"4 knee pushups",
+                "title":"knee push-ups",
+                "type":"count",
+                "time":"x4"
+            },
+            {
+                "id":"3",
+                "url":"pushup.json",
+                "detail":"4 pushups",
+                "title":"push-ups",
+                "type":"count",
+                "time":"x4"
+            },
+            {   
+                "id":"4",
+                "url":"widearmpushup.json",
+                "detail":"4 wide arm pushups",
+                "title":"wide arm push-ups",
+                "type":"count",
+                "time":"x4"
+
+            },
+            {
+                "id":"5",
+                "url":"inclinepushup.json",
+                "detail":"6 incline pushups",
+                "title":"incline push-ups",
+                "type":"count",
+                "time":"x6"
+            },
+            {
+                "id":"6",
+                "url":"kneepushup.json",
+                "detail":"4 knee pushups",
+                "title":"knee push-ups",
+                "type":"count",
+                "time":"x4"
+            },
+            {
+                "url":"Triceps dips.json",
+                "detail":"4 triceps dips",
+                "title":"triceps dips",
+                "type":"count",
+                "time":"x4"
+            },{
+               "url":"cobrastretch.json",
+               "detail":"20 sec cobra stretch",
+               "title":"cobra stretch",
+               "type":"time",
+               "time":"20" 
+            },
+            {
+                "id":"2",
+                "url":"kneepushup.json",
+                "detail":"4 knee pushups",
+                "title":"knee push-ups",
+                "type":"count",
+                "time":"x4"
+            }
+            
+           ],
+           "armbeginner" :[
+            {
+                "title":"arm workout",
+                "time":" 10 min"  
+              },
+               {
+                   "url":"arm raise arms beginner.json",
+                   "detail":"30 sec arm raise ",
+                   "title":"arm raises",
+                   "type":"time",
+                   "time":"30"
+               },
+               {
+                   "url":"side arm raise.json",
+                   "detail":"30 sec side arm raise",
+                   "title":"side arm raise",
+                   "type":"time",
+                   "time":"30"
+               },
+               {
+                "url":"Triceps dips.json",
+                "detail":"4 triceps dips",
+                "title":"triceps dips",
+                "type":"count",
+                "time":"x4"
+               },{
+                "url":"arm circle clockwise.json",
+                "detail":"30 sec arm circles clock wise",
+                "title":"arm circles ",
+                "type":"time",
+                "time":"30"
+               },{
+                   "url":"arm circle anticlockwise.json",
+                   "detail":"30 sec arm circles anti clock wise",
+                "title":"arm circles ",
+                "type":"time",
+                "time":"30"
+               },{
+                   "url":"diamond pushups.json",
+                   "detail":"6 diamond pushups",
+                   "title":"diamond pushups",
+                   "type":"count",
+                "time":"x6"    
+                },{
+                    "url":"jumpingjacks.json",
+                    "details":"30 sec jumping jacks",
+                    "title":"jumping jacks",
+                    "time":"30",
+                    "type":"time"
+    
+                },{
+                    "url":"leg barbell curl right.json",
+                    "details":"8 leg barbell curl right ",
+                    "title":"leg barbell right",
+                    "time":"x8",
+                    "type":"count"
+    
+                },{
+                    "url":"leg barell curl left.json",
+                    "details":"8 leg barbell curl left ",
+                    "title":"leg barbell  left",
+                    "time":"x8",
+                    "type":"count"
+                },{
+                    "url":"diagonal plank.json",
+                    "details":"10 diamond plank  ",
+                    "title":"diamond plank",
+                    "time":"x10",
+                    "type":"count"
+                }
+                
+           ],
+           "legbeginner":[
+            {
+                "title":"Leg  workout",
+                "time":" 10 min"  
+              },
+               {
+                "url":"Backward-lunge-front-kick-left.json",
+                "details":"14 backward lunge front kick left ",
+                "title":"backward lunge",
+                "time":"x14",
+                "type":"count"
+               },
+               {
+                "url":"Backward-lunge-front-kick-right.json",
+                "details":"14 backward lunge front kick right ",
+                "title":"backward lunge",
+                "time":"x14",
+                "type":"count"
+               },
+               {
+                "url":"Flutter-kick-squat.json",
+                "details":"12 flutter kick squat ",
+                "title":"flutter kick squat",
+                "time":"x12",
+                "type":"count"
+               },
+               {
+                "url":"Walking-squats.json",
+                "details":"12 walking squats ",
+                "title":"waking squats",
+                "time":"x12",
+                "type":"count"
+
+               },
+               {
+                "url":"Plank-jacks.json",
+                "details":"12 plank jacks ",
+                "title":"plank jacks",
+                "time":"x12",
+                "type":"count"
+               },{
+
+                "url":"Adductor-starch-in-standing.json",
+                "details":"10 Adductor starch in standing",
+                "title":"Adductor starch ",
+                "time":"x10",
+                "type":"count"
+               }, {
+                "url":"Backward-lunge-front-kick-left.json",
+                "details":"14 backward lunge front kick left ",
+                "title":"backward lunge",
+                "time":"x14",
+                "type":"count"
+               },
+               {
+                "url":"Backward-lunge-front-kick-right.json",
+                "details":"14 backward lunge front kick right ",
+                "title":"backward lunge",
+                "time":"x14",
+                "type":"count"
+               }
+           ]
+
+
+    
+        }
+    
