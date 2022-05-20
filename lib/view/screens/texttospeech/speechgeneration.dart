@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/texttospeech/speak.dart';
 
 class SpeechGene extends StatefulWidget {
@@ -49,7 +50,7 @@ class _SpeechGeneState extends State<SpeechGene> {
                     if (states.contains(MaterialState.pressed)) {
                       return Colors.green;
                     }
-                    return Colors.orange;
+                    return primaryPurple;
                   },
                 )),
                 child: Text("Speak",
@@ -73,7 +74,7 @@ class _SpeechGeneState extends State<SpeechGene> {
                     if (states.contains(MaterialState.pressed)) {
                       return Colors.green;
                     }
-                    return Colors.orange;
+                    return primaryPurple;
                   },
                 )),
                 child: Text("Clear",

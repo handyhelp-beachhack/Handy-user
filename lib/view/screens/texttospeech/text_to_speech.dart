@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/texttospeech/speak.dart';
 import 'package:handy_beachhack/view/screens/texttospeech/speechgeneration.dart';
 
@@ -44,7 +45,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            title:Center(child: Text("Live Speech",style:TextStyle(color:Colors.orange,fontSize:20,fontWeight: FontWeight.bold))),
+            title:Center(child: Text("Live Speech",style:TextStyle(color:primaryPurple,fontSize:20,fontWeight: FontWeight.bold))),
             elevation: 0,
             backgroundColor: Color.fromARGB(255, 229, 242, 255),
             actions: [
@@ -86,7 +87,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
                                             padding: EdgeInsets.all(0.0),
                                             child: Text("Create a ShortCut",
                                                 style: TextStyle(
-                                                    color: Colors.orange,
+                                                    color: grey,
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.bold)),
                                           ),
@@ -133,7 +134,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
                                                               .pressed)) {
                                                         return Colors.green;
                                                       }
-                                                      return Colors.orange;
+                                                      return primaryPurple;
                                                     },
                                                   )),
                                                   child: Text("ADD",
@@ -188,7 +189,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
                           child: Text(
                         shortSpeech[index],
                         style:
-                            TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                            TextStyle(fontSize: 20,color: Color.fromARGB(255, 101, 154, 197), fontWeight: FontWeight.w700),
                       )),
                     ),
                   ),
@@ -210,7 +211,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
                                                               .pressed)) {
                                                         return Colors.green;
                                                       }
-                                                      return Colors.orange;
+                                                      return primaryPurple;
                                                     },
                                                               )),
             child: Text("Speech Generation",style:TextStyle(color:Colors.white,fontSize:18,fontWeight: FontWeight.bold)),

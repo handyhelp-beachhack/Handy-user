@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
-
+import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
+import 'package:alan_voice/alan_voice.dart';
 import 'view/screens/texttospeech/text_to_speech.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -48,6 +49,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  _MyAppState() {
+    /// Init Alan Button with project key from Alan Studio
+    AlanVoice.addButton(
+        "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage");
+    buttonAlign:
+    AlanVoice.BUTTON_ALIGN_LEFT;
+
+    /// Handle commands from Alan Studio
+    AlanVoice.onCommand.add((command) {
+      debugPrint("got new command ${command.toString()}");
+    });
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -110,7 +124,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       // home: const MobileEntry(),
-      home :TextToSpeech(),
+      home: SpeechToText(),
     );
   }
 }
