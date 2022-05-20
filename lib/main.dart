@@ -5,6 +5,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
 
+import 'view/screens/texttospeech/text_to_speech.dart';
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
   // make sure you call `initializeApp` before using other Firebase services.
@@ -107,7 +109,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MobileEntry(),
+      // home: const MobileEntry(),
+      home :TextToSpeech(),
     );
   }
 }
