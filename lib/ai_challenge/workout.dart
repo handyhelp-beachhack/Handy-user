@@ -21,7 +21,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Size? _imageSize;
   Pose? pose;
   late HandExcersie handExcersie;
-  bool connected = false;
+  bool connected = true;
 
   @override
   void initState() {
@@ -79,30 +79,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(onPressed: () async {
-        //   if (!_start) {
-        //     await BodyDetection.enablePoseDetection();
-        //     await BodyDetection.startCameraStream(
-        //       onFrameAvailable: (ImageResult image) {
-        //         _handleCameraImage(image);
-        //       },
-        //       onPoseAvailable: (Pose? p) {
-        //         if (p != null) {
-        //           setState(() {
-        //             pose = p;
-        //           });
-        //           handExcersie.predict(p);
-        //         }
-        //       },
-        //       onMaskAvailable: (_) {},
-        //     );
-        //   } else {
-        //     await BodyDetection.disablePoseDetection();
-        //     await BodyDetection.stopCameraStream();
-        //   }
-
-        //   _start = !_start;
-        // }),
         body: !connected
             ? const CircularProgressIndicator()
             : Stack(
@@ -235,6 +211,6 @@ class PosePainter extends CustomPainter {
         [PoseLandmarkType.rightHeel, PoseLandmarkType.rightToe],
         [PoseLandmarkType.leftHeel, PoseLandmarkType.leftToe],
         [PoseLandmarkType.rightIndexFinger, PoseLandmarkType.rightPinkyFinger],
-        [PoseLandmarkType.leftIndexFinger, PoseLandmarkType.leftPinkyFinger],
+        [PoseLandmarkType.leftIndexFinger, PoseLandmarkType.leftPinkyFinger]
       ];
 }

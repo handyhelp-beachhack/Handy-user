@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
+import 'package:handy_beachhack/view/screens/home/home_page.dart';
 
 import 'ai_challenge/workout.dart';
 
@@ -109,7 +110,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WorkoutPage(),
+      home: const HomePage(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-const primaryPurple = Color(0xff031A43);
+const primaryPurple = Color(0xff294281);
 const white = Color(0xffffffff);
 const double defaultPadding = 16;
 const Color red = Color(0xffe33434);

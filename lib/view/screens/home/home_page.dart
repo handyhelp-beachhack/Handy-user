@@ -1,6 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:handy_beachhack/ai_challenge/workout.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/widgets/event_container.dart';
+import 'package:handy_beachhack/view/screens/home/home_cards.dart';
+import 'package:handy_beachhack/view/screens/learning/learning_page.dart';
+import 'package:handy_beachhack/view/widgets/app_drawer.dart';
+import 'package:handy_beachhack/view/widgets/appbar.dart';
+import 'package:handy_beachhack/view/widgets/bottom_navigationbar.dart';
+import 'package:handy_beachhack/view/widgets/buttons/rounded_rect_primary.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,10 +19,139 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SafeArea(
-      child: Scaffold(backgroundColor: white),
+      child: Scaffold(
+        key: _scaffoldState,
+        drawer: AppDrawer(),
+        appBar: appBarCustom(
+            prefixWidget: InkWell(
+              onTap: () {
+                _scaffoldState.currentState!.openDrawer();
+              },
+              child: const Icon(
+                Icons.menu,
+                color: white,
+                size: 30,
+              ),
+            ),
+            title: "home",
+            suffixWidget: Row(
+              children: [
+                Icon(
+                  Icons.account_circle,
+                  color: white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: defaultPadding,
+                ),
+                Icon(
+                  Icons.notifications,
+                  color: white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: defaultPadding,
+                ),
+                Icon(
+                  Icons.chat,
+                  color: white,
+                  size: 30,
+                ),
+              ],
+            )),
+        backgroundColor: white,
+        bottomNavigationBar: BottomNavigationBarCustom(currentIndex: 0),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(defaultPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                EventContainer(),
+                SizedBox(
+                  height: defaultPadding,
+                ),
+                Text(
+                  " for you",
+                  style: TextStyle(
+                    color: grey,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: defaultPadding,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HomeContainerOne(
+                      ontap: () {
+                        Get.to(LearningPage());
+                      },
+                      size: size,
+                      assets: "learning",
+                      title: "sign language\nlearning",
+                    ),
+                    HomeContainerOne(
+                      ontap: () => {},
+                      assets: "speaking",
+                      size: size,
+                      title: "Live Speaking\n(text to speach)",
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: defaultPadding,
+                ),
+                HomeContainerOne(
+                  assets: "listening",
+                  ontap: () => {},
+                  size: size,
+                  title: "Live Speaking\n(text to speach)",
+                ),
+                const SizedBox(
+                  height: defaultPadding,
+                ),
+                Text(
+                  " for blind",
+                  style: TextStyle(
+                    color: grey,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: defaultPadding,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HomeContainerOne(
+                      size: size,
+                      ontap: () => {},
+                      assets: "search",
+                      title: "Search It!\n(seach what\nyou want)",
+                    ),
+                    HomeContainerOne(
+                      assets: "deetection",
+                      size: size,
+                      ontap: () => {},
+                      title: "Live Speaking\n(text to speach)",
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
