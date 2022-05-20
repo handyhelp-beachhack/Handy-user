@@ -3,9 +3,9 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
-import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
 
-import 'ai_challenge/workout.dart';
+import 'google_ml_kit/image_labelling.dart';
+import 'google_ml_kit/object_detector.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
@@ -105,11 +105,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const WorkoutPage(),
-    );
+        title: 'Handy Help',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: ObjectDetectorView());
   }
 }
