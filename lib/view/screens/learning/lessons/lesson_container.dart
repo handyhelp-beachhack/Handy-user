@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 
-class LearningContainer extends StatelessWidget {
-  const LearningContainer({
+class LessonContainer extends StatelessWidget {
+  const LessonContainer({
     Key? key,
     this.color = white,
     required this.title,
     required this.image,
     this.decription = "",
-    this.opacity = 0.3,
+    this.opacity = 0.2,
     required this.ontap,
   }) : super(key: key);
   final String title;
@@ -28,7 +28,7 @@ class LearningContainer extends StatelessWidget {
             child: Container(
               height: 130,
               width: double.maxFinite,
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: Image.network(
                 image,
                 fit: BoxFit.cover,
@@ -40,7 +40,7 @@ class LearningContainer extends StatelessWidget {
             width: double.maxFinite,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: red.withOpacity(opacity)),
+                color: primaryPurple.withOpacity(opacity)),
           ),
           Positioned(
               bottom: 20,

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:handy_beachhack/ai_challenge/workout.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/widgets/event_container.dart';
 import 'package:handy_beachhack/view/screens/home/home_cards.dart';
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             ),
             title: "home",
             suffixWidget: Row(
-              children: [
+              children: const [
                 Icon(
                   Icons.account_circle,
                   color: white,
@@ -73,11 +72,11 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                EventContainer(),
-                SizedBox(
+                const EventContainer(),
+                const SizedBox(
                   height: defaultPadding,
                 ),
-                Text(
+                const Text(
                   " for you",
                   style: TextStyle(
                     color: grey,
@@ -85,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: defaultPadding,
                 ),
                 Row(
