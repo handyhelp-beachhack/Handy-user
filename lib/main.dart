@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> {
         // go to speech generation
         print("speech generation");
         break;
-        case "ObjectDectectorView":
+      case "ObjectDectectorView":
         // Get.to(ObjectDectectorView());
         // whats infront of me
         print("speech generation");
@@ -153,12 +153,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-<<<<<<< HEAD
       home: const HomePage(),
-=======
-      // home: const MobileEntry(),
-      home: SpeechToText(),
->>>>>>> 429073d36b07ac9532904fcf94c6c9e18f53b827
     );
   }
 }

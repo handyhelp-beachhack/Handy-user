@@ -53,6 +53,7 @@ dependencies:
   flutter_otp_text_field: ^1.0.1
   speech_to_text: ^5.5.0
   avatar_glow: ^2.0.2
+  cached_network_image: ^3.2.1
   alan_voice: 3.0.0
  
 
