@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/screens/eventt-creation/event_creation.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class AppDrawer extends StatelessWidget {
           ),
           ListTile(
               onTap: () {
-                // Get.to(const ChatScreen());
+                Get.to(const EventCreation());
               },
               title: const Text(
                 "create event",

@@ -24,6 +24,8 @@ class _SpeechGeneState extends State<SpeechGene> {
             height: height / 1.5,
             child: SizedBox(
               child: TextField(
+                decoration: new InputDecoration.collapsed(
+                    hintText: '\n\n\t\tEnter text to genereate speech.....'),
                 controller: controller,
                 style: TextStyle(
                   fontSize: 26,
@@ -58,10 +60,7 @@ class _SpeechGeneState extends State<SpeechGene> {
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold)),
-                onPressed: () => {
-                  
-                  speak(controller.text)
-                },
+                onPressed: () => {speak(controller.text)},
               ),
             ),
             Container(
@@ -82,9 +81,7 @@ class _SpeechGeneState extends State<SpeechGene> {
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold)),
-                onPressed: () => {
-                  controller.clear()
-                },
+                onPressed: () => {controller.clear()},
               ),
             ),
           ],

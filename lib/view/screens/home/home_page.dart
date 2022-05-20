@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
+import 'package:handy_beachhack/view/screens/texttospeech/text_to_speech.dart';
 import 'package:handy_beachhack/view/widgets/event_container.dart';
 import 'package:handy_beachhack/view/screens/home/home_cards.dart';
 import 'package:handy_beachhack/view/screens/learning/learning_page.dart';
@@ -99,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                       title: "sign language\nlearning",
                     ),
                     HomeContainerOne(
-                      ontap: () => {},
+                      ontap: () => {Get.to(TextToSpeech())},
                       assets: "speaking",
                       size: size,
                       title: "Live Speaking\n(text to speach)",
@@ -111,9 +113,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 HomeContainerOne(
                   assets: "listening",
-                  ontap: () => {},
+                  ontap: () => {Get.to(SpeechToText())},
                   size: size,
-                  title: "Live Speaking\n(text to speach)",
+                  title: "Live Listening\n(speech to text)",
                 ),
                 const SizedBox(
                   height: defaultPadding,

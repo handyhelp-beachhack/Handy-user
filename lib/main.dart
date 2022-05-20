@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
   void handleCommand(Map<String, dynamic> command) {
     switch (command['command']) {
       case "SpeechToText":
-        Get.to(SpeechToText);
+        Get.to(SpeechToText());
         // go to live listening
         print("text generation");
         break;
