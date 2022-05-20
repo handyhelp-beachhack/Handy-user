@@ -2,8 +2,8 @@
 Team MindHacks
 
 
-Branches:
-main
-jopaul
-backend
-joyal
+Branches:<br>
+main<br>
+jopaul<br>
+backend<br>
+joyal<br>
