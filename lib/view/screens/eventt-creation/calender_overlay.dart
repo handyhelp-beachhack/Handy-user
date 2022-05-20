@@ -34,8 +34,8 @@ class CalenderOverlay extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20), color: white),
                 child: CalendarDatePicker(
                     initialDate: DateTime.now(),
-                    firstDate: DateTime(1900),
-                    lastDate: DateTime.now(),
+                    firstDate: DateTime.now(),
+                    lastDate: DateTime(2200),
                     onDateChanged: onDateChanged),
               ),
             ),

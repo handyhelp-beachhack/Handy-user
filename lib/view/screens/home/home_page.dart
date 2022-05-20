@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/screens/profile/profile_page.dart';
 import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
 import 'package:handy_beachhack/view/screens/texttospeech/text_to_speech.dart';
 import 'package:handy_beachhack/view/widgets/event_container.dart';
@@ -41,11 +42,16 @@ class _HomePageState extends State<HomePage> {
             ),
             title: "home",
             suffixWidget: Row(
-              children: const [
-                Icon(
-                  Icons.account_circle,
-                  color: white,
-                  size: 30,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Get.to(ProfilePage());
+                  },
+                  child: Icon(
+                    Icons.account_circle,
+                    color: white,
+                    size: 30,
+                  ),
                 ),
                 SizedBox(
                   width: defaultPadding,

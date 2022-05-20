@@ -55,6 +55,7 @@ dependencies:
   avatar_glow: ^2.0.2
   cached_network_image: ^3.2.1
   alan_voice: 3.0.0
+  maps_launcher: ^2.0.1
  
 
 dev_dependencies:

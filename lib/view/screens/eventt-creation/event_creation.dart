@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:handy_beachhack/api/event_api.dart';
+import 'package:handy_beachhack/api/registration.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/eventt-creation/calender_overlay.dart';
 import 'package:handy_beachhack/view/screens/eventt-creation/event_day_container.dart';
@@ -11,6 +13,7 @@ import 'package:handy_beachhack/view/screens/eventt-creation/time_controller.dar
 import 'package:handy_beachhack/view/widgets/buttons/rounded_rect_primary.dart';
 import 'package:handy_beachhack/view/widgets/textfield_custome.dart';
 import 'package:handy_beachhack/view/widgets/toast/toast.dart';
+import 'package:maps_launcher/maps_launcher.dart';
 
 class EventCreation extends StatefulWidget {
   const EventCreation({Key? key}) : super(key: key);
@@ -28,6 +31,7 @@ class _EventCreationState extends State<EventCreation> {
   final TextEditingController hourTextController =
       TextEditingController(text: "0");
   bool loading = false;
+  DateTime? eventDate;
   String eventDayString = "";
   @override
   Widget build(BuildContext context) {
@@ -100,6 +104,7 @@ class _EventCreationState extends State<EventCreation> {
                                                 .toString()
                                                 .substring(0, 10);
                                             overlayEntry.remove();
+                                            eventDate = time;
                                           });
                                         },
                                         calenderOverlay: overlayEntry,
@@ -125,6 +130,9 @@ class _EventCreationState extends State<EventCreation> {
                       loading: loading,
                       text: "continue",
                       onpressed: () {
+                        setState(() {
+                          loading = true;
+                        });
                         if (nameController.text == "" ||
                             descriptionController.text == "" ||
                             contactController.text == "" ||
@@ -135,9 +143,31 @@ class _EventCreationState extends State<EventCreation> {
                               title: "all fields are required",
                               description: "",
                               icon: Icons.warning);
+                        } else {
+                          double lat = 0;
+                          double lon = 0;
+                          MapsLauncher.launchCoordinates(lat, lon);
+                          // eventDate.hour = int.parse(hourTextController.text);
+                          DateTime due = DateTime(
+                            eventDate!.year,
+                            eventDate!.month,
+                            eventDate!.day,
+                            int.parse(hourTextController.text),
+                            int.parse(minTextController.text),
+                          );
+                          EventApi.createEvent(
+                              eventName: nameController.text,
+                              description: descriptionController.text,
+                              mobile: contactController.text,
+                              eventDate: due,
+                              lat: lat,
+                              lon: lon);
                         }
                         print(hourTextController.text);
                         print(minTextController.text);
+                        setState(() {
+                          loading = false;
+                        });
                       }),
                 ],
               ),

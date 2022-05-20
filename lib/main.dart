@@ -6,6 +6,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
 import 'package:handy_beachhack/view/screens/home/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'google_ml_kit/image_labelling.dart';
 import 'google_ml_kit/object_detector.dart';
@@ -153,7 +154,19 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: FutureBuilder<SharedPreferences>(
+          future: SharedPreferences.getInstance(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done &&
+                snapshot.hasData) {
+              if (snapshot.data?.getString("mobile") == null) {
+                return const MobileEntry();
+              } else {
+                return const HomePage();
+              }
+            }
+            return const Offstage();
+          }),
     );
   }
 }

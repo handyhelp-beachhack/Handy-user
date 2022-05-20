@@ -12,7 +12,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String baseUrl = "http://app.geekstudios.tech";
+const String baseUrl = "https://app.geekstudios.tech";
 
 class RegisterApi {
   static Future<int> emailCheck(
@@ -21,8 +21,8 @@ class RegisterApi {
     print("url $url");
     final uri = Uri.parse(url);
     print("phone $mobile");
-    print("country $countryCode");
-    Map<String, dynamic> body = {"phone": mobile, "country_code": countryCode};
+    // print("country $countryCode");
+    Map<String, dynamic> body = {"phone": mobile, "account_type": "user"};
     try {
       http.Response response = await http
           .post(
@@ -34,6 +34,7 @@ class RegisterApi {
 
       debugPrint("------------status code------------");
       debugPrint("${response.statusCode}");
+      print(response.body);
       debugPrint("st ${jsonDecode(response.body)["status_code"]}");
       debugPrint("message ${jsonDecode(response.body)["message"]}");
       debugPrint("response ${jsonDecode(response.body)}");
@@ -82,7 +83,6 @@ class RegisterApi {
     print("---------------------fcm-------------------");
     Map<String, dynamic> body = {
       "phone": mobile,
-      "country_code": countryCode,
       "otp": otp,
       "device": {
         "fcm": fcmToken,
