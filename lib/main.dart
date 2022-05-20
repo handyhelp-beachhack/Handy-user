@@ -3,6 +3,11 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
+=======
+import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
+import 'package:handy_beachhack/view/screens/home/home_page.dart';
+>>>>>>> 3af5f567ffedaea41f1d99e0e6f9d93444ab6d00
 
 import 'google_ml_kit/image_labelling.dart';
 import 'google_ml_kit/object_detector.dart';
@@ -105,10 +110,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'Handy Help',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: ObjectDetectorView());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
   }
 }
