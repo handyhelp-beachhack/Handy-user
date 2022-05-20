@@ -49,6 +49,12 @@ dependencies:
   shared_preferences: ^2.0.15
   sqflite: ^2.0.2+1
   youtube_player_flutter: ^8.1.0
+  web_socket_channel: ^2.2.0
+  flutter_otp_text_field: ^1.0.1
+  speech_to_text: ^5.5.0
+  avatar_glow: ^2.0.2
+  alan_voice: 3.0.0
+ 
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
