@@ -52,14 +52,40 @@ class _MyAppState extends State<MyApp> {
   _MyAppState() {
     /// Init Alan Button with project key from Alan Studio
     AlanVoice.addButton(
-        "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage");
-    buttonAlign:
-    AlanVoice.BUTTON_ALIGN_LEFT;
+        "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
 
     /// Handle commands from Alan Studio
-    AlanVoice.onCommand.add((command) {
-      debugPrint("got new command ${command.toString()}");
+    AlanVoice.onEvent.add((event) {
+      debugPrint("got new event ${event.data.toString()}");
     });
+
+    AlanVoice.onCommand.add((command) {
+      handleCommand(command.data);
+      debugPrint("command ${command.toString()}");
+    });
+  }
+  void handleCommand(Map<String, dynamic> command) {
+    switch (command['command']) {
+      case "SpeechToText":
+        Get.to(SpeechToText);
+        // go to live listening
+        print("text generation");
+        break;
+      case "TextToSpeech":
+        Get.to(TextToSpeech());
+        // go to speech generation
+        print("speech generation");
+        break;
+        case "ObjectDectectorView":
+        // Get.to(ObjectDectectorView());
+        // whats infront of me
+        print("speech generation");
+        break;
+      case "Back":
+        Get.back();
+        break;
+    }
   }
 
   @override

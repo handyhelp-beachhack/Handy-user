@@ -45,7 +45,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            title:Center(child: Text("Live Speech",style:TextStyle(color:primaryPurple,fontSize:20,fontWeight: FontWeight.bold))),
+            title:Center(child: Text("Live Speech Gen.",style:TextStyle(color:primaryPurple,fontSize:20,fontWeight: FontWeight.bold))),
             elevation: 0,
             backgroundColor: Color.fromARGB(255, 229, 242, 255),
             actions: [
