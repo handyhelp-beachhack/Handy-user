@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:handy_beachhack/google_ml_kit/object_detector.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/profile/profile_page.dart';
 import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     HomeContainerOne(
                       size: size,
-                      ontap: () => {},
+                      ontap: () => {Get.to(ObjectDetectorView())},
                       assets: "search",
                       title: "Search It!\n(seach what\nyou want)",
                     ),

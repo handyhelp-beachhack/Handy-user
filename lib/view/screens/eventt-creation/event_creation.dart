@@ -15,6 +15,8 @@ import 'package:handy_beachhack/view/widgets/textfield_custome.dart';
 import 'package:handy_beachhack/view/widgets/toast/toast.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 
+import '../../widgets/event_loc_widget.dart';
+
 class EventCreation extends StatefulWidget {
   const EventCreation({Key? key}) : super(key: key);
 
@@ -144,27 +146,29 @@ class _EventCreationState extends State<EventCreation> {
                               description: "",
                               icon: Icons.warning);
                         } else {
-                          double lat = 0;
-                          double lon = 0;
-                          MapsLauncher.launchCoordinates(lat, lon);
+                          Get.to(GetMapLocation(
+                            title: "Set Event Location",
+                            onTap: (loc) {
+                              DateTime due = DateTime(
+                                eventDate!.year,
+                                eventDate!.month,
+                                eventDate!.day,
+                                int.parse(hourTextController.text),
+                                int.parse(minTextController.text),
+                              );
+                              EventApi.createEvent(
+                                  eventName: nameController.text,
+                                  description: descriptionController.text,
+                                  mobile: contactController.text,
+                                  eventDate: due,
+                                  lat: loc.coordinates[1],
+                                  lon: loc.coordinates[0]);
+                            },
+                          ));
                           // eventDate.hour = int.parse(hourTextController.text);
-                          DateTime due = DateTime(
-                            eventDate!.year,
-                            eventDate!.month,
-                            eventDate!.day,
-                            int.parse(hourTextController.text),
-                            int.parse(minTextController.text),
-                          );
-                          EventApi.createEvent(
-                              eventName: nameController.text,
-                              description: descriptionController.text,
-                              mobile: contactController.text,
-                              eventDate: due,
-                              lat: lat,
-                              lon: lon);
+
                         }
-                        print(hourTextController.text);
-                        print(minTextController.text);
+
                         setState(() {
                           loading = false;
                         });

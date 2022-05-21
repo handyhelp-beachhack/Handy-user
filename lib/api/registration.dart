@@ -118,8 +118,6 @@ class RegisterApi {
               "token", jsonDecode(response.body)["response"]["accessToken"]);
           pref.setString(
               "mobile", jsonDecode(response.body)["response"]["user"]["phone"]);
-          pref.setString("country_code",
-              jsonDecode(response.body)["response"]["user"]["country_code"]);
 
           if (jsonDecode(response.body)["response"]["user"]
                   ["profile_completion"] ==

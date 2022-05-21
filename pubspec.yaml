@@ -54,6 +54,7 @@ dependencies:
   speech_to_text: ^5.5.0
   avatar_glow: ^2.0.2
   cached_network_image: ^3.2.1
+  webview_flutter: ^3.0.2
   alan_voice: 3.0.0
   maps_launcher: ^2.0.1
  
