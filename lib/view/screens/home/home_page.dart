@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/screens/profile/profile_page.dart';
+import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
+import 'package:handy_beachhack/view/screens/texttospeech/text_to_speech.dart';
 import 'package:handy_beachhack/view/widgets/event_container.dart';
 import 'package:handy_beachhack/view/screens/home/home_cards.dart';
 import 'package:handy_beachhack/view/screens/learning/learning_page.dart';
@@ -38,10 +41,15 @@ class _HomePageState extends State<HomePage> {
             title: "home",
             suffixWidget: Row(
               children: [
-                Icon(
-                  Icons.account_circle,
-                  color: white,
-                  size: 30,
+                InkWell(
+                  onTap: () {
+                    Get.to(ProfilePage());
+                  },
+                  child: Icon(
+                    Icons.account_circle,
+                    color: white,
+                    size: 30,
+                  ),
                 ),
                 SizedBox(
                   width: defaultPadding,
@@ -70,11 +78,11 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                EventContainer(),
-                SizedBox(
+                const EventContainer(),
+                const SizedBox(
                   height: defaultPadding,
                 ),
-                Text(
+                const Text(
                   " for you",
                   style: TextStyle(
                     color: grey,
@@ -82,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: defaultPadding,
                 ),
                 Row(
@@ -97,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                       title: "sign language\nlearning",
                     ),
                     HomeContainerOne(
-                      ontap: () => {},
+                      ontap: () => {Get.to(TextToSpeech())},
                       assets: "speaking",
                       size: size,
                       title: "Live Speaking\n(text to speach)",
@@ -109,9 +117,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 HomeContainerOne(
                   assets: "listening",
-                  ontap: () => {},
+                  ontap: () => {Get.to(SpeechToText())},
                   size: size,
-                  title: "Live Speaking\n(text to speach)",
+                  title: "Live Listening\n(speech to text)",
                 ),
                 const SizedBox(
                   height: defaultPadding,

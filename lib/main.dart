@@ -1,3 +1,4 @@
+import 'package:alan_voice/alan_voice.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -5,9 +6,12 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
 import 'package:handy_beachhack/view/screens/home/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'google_ml_kit/image_labelling.dart';
 import 'google_ml_kit/object_detector.dart';
+import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
+import 'view/screens/texttospeech/text_to_speech.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
@@ -50,6 +54,47 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  _MyAppState() {
+    /// Init Alan Button with project key from Alan Studio
+    AlanVoice.addButton(
+        "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        bottomMargin: 20,
+        topMargin: 0);
+
+    /// Handle commands from Alan Studio
+    AlanVoice.onEvent.add((event) {
+      debugPrint("got new event ${event.data.toString()}");
+    });
+
+    AlanVoice.onCommand.add((command) {
+      handleCommand(command.data);
+      debugPrint("command ${command.toString()}");
+    });
+  }
+  void handleCommand(Map<String, dynamic> command) {
+    switch (command['command']) {
+      case "SpeechToText":
+        Get.to(SpeechToText());
+        // go to live listening
+        print("text generation");
+        break;
+      case "TextToSpeech":
+        Get.to(TextToSpeech());
+        // go to speech generation
+        print("speech generation");
+        break;
+      case "ObjectDectectorView":
+        Get.to(ObjectDetectorView());
+        // whats infront of me
+        print("speech generation");
+        break;
+      case "Back":
+        //go back
+        Get.back();
+        break;
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -111,7 +156,19 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: FutureBuilder<SharedPreferences>(
+          future: SharedPreferences.getInstance(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done &&
+                snapshot.hasData) {
+              if (snapshot.data?.getString("mobile") == null) {
+                return const MobileEntry();
+              } else {
+                return const HomePage();
+              }
+            }
+            return const Offstage();
+          }),
     );
   }
 }

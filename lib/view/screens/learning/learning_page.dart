@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/learning/learning_container.dart';
+import 'package:handy_beachhack/view/screens/learning/lessons/lesson_paage.dart';
 import 'package:handy_beachhack/view/widgets/appbar.dart';
 
 class LearningPage extends StatefulWidget {
@@ -20,12 +22,15 @@ class _LearningPageState extends State<LearningPage> {
         body: Container(
           padding: EdgeInsets.all(defaultPadding),
           child: Column(
-            children: const [
+            children: [
               LearningContainer(
                   title: "ASL tuorials",
                   decription: "ASL basics to advanced",
                   color: white,
                   opacity: .1,
+                  ontap: () {
+                    Get.to(LessonPage());
+                  },
                   image:
                       "https://c0.wallpaperflare.com/preview/803/320/871/translate-translation-web-service.jpg"),
               const SizedBox(
@@ -36,6 +41,7 @@ class _LearningPageState extends State<LearningPage> {
                   decription: "quick revision of signs",
                   color: white,
                   opacity: .2,
+                  ontap: () {},
                   image:
                       "https://c0.wallpaperflare.com/preview/1005/983/706/business-concept-consulting-illustration-thumbnail.jpg"),
               const SizedBox(
@@ -46,6 +52,7 @@ class _LearningPageState extends State<LearningPage> {
                   decription: "complete assignments and earn badges",
                   color: white,
                   opacity: .1,
+                  ontap: () {},
                   image:
                       "https://c0.wallpaperflare.com/preview/724/512/41/checklist-business-businesswoman-notebook.jpg"),
             ],
