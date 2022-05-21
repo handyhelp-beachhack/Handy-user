@@ -6,6 +6,7 @@ class JobController extends GetxController {
   List<JobModel> jobList = [];
   getJobs() async {
     jobList = await JobApi.getJobs();
+    print("total jobs ${jobList.length}");
     update();
   }
 }
