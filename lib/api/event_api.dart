@@ -79,14 +79,15 @@ class EventApi {
 
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? accessToken = pref.getString("token");
+    Map<String, String> headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer $accessToken"
+    };
+    print("header $headers");
     try {
-      http.Response response = await http.get(
-        uri,
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer $accessToken"
-        },
-      ).timeout(const Duration(seconds: 3));
+      http.Response response = await http
+          .get(uri, headers: headers)
+          .timeout(const Duration(seconds: 3));
       print("result ${response.body}");
 
       if (jsonDecode(response.body)["response_code"] == 200) {

@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                   height: defaultPadding,
                 ),
                 const Text(
-                  " for you",
+                  " for deaf",
                   style: TextStyle(
                     color: grey,
                     fontSize: 16,

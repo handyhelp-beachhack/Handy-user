@@ -4,15 +4,22 @@ import 'package:handy_beachhack/controllers/profile_controller.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/widgets/appbar.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  final profileController = Get.put(ProfileController());
+
+  @override
   Widget build(BuildContext context) {
+    profileController.getJobs();
     Size size = MediaQuery.of(context).size;
-    final profileController = Get.put(ProfileController());
     return SafeArea(
       child: Scaffold(
         appBar: appBarCustom(title: "profile"),
@@ -56,7 +63,10 @@ class ProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Shashi",
+                              profileController.userList.isEmpty
+                                  ? ""
+                                  : profileController
+                                      .userList[0].connected[0].name,
                               style: TextStyle(
                                   color: primaryPurple,
                                   fontWeight: FontWeight.bold,

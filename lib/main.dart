@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
   _MyAppState() {
     /// Init Alan Button with project key from Alan Studio
     AlanVoice.addButton(
-        "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        "dd2402808658d9ed31e3c4a9f9e8e2462e956eca572e1d8b807a3e2338fdd0dc/stage",
         bottomMargin: 20,
         topMargin: 0);
 

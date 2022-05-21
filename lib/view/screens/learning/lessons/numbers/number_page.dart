@@ -17,6 +17,9 @@ class NumberPage extends StatefulWidget {
 }
 
 class _NumberPageState extends State<NumberPage> {
+  int currentIndex = 3;
+  List<LectureModel> lectures =
+      List.from(numbers.map((e) => LectureModel.fromMap(e)).toList());
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,20 +30,26 @@ class _NumberPageState extends State<NumberPage> {
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 80,
-              width: 200,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xff32BEA6),
-              ),
-              child: Text(
-                "Continue",
-                style: TextStyle(
-                  color: white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () {
+                Get.to(
+                    SelectedPage(lectures: lectures, index: currentIndex + 1));
+              },
+              child: Container(
+                height: 80,
+                width: 200,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xff32BEA6),
+                ),
+                child: Text(
+                  "Continue",
+                  style: TextStyle(
+                    color: white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -60,7 +69,9 @@ class _NumberPageState extends State<NumberPage> {
                       GestureDetector(
                         onTap: () {
                           Get.to(SelectedPage(
-                              lecture: LectureModel.fromMap(numbers[i])));
+                            lectures: lectures,
+                            index: i,
+                          ));
                         },
                         child: LectureContainer(
                           lecture: LectureModel.fromMap(numbers[i]),
