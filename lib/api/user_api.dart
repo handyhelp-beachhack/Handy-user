@@ -132,7 +132,7 @@ class UserApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
 
       if (jsonDecode(response.body)["response_code"] == 200) {
         showToast(
@@ -182,7 +182,7 @@ class UserApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
       print(response.body);
       if (jsonDecode(response.body)["response_code"] == 200) {
         showToast(
@@ -265,7 +265,7 @@ class UserApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
       print("------------------------");
       print(response.body);
       if (jsonDecode(response.body)["response_code"] == 200) {

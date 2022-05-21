@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:handy_beachhack/google_ml_kit/object_detector.dart';
+import 'package:handy_beachhack/controllers/event_cnotroller.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/profile/profile_page.dart';
 import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
@@ -12,6 +12,8 @@ import 'package:handy_beachhack/view/widgets/app_drawer.dart';
 import 'package:handy_beachhack/view/widgets/appbar.dart';
 import 'package:handy_beachhack/view/widgets/bottom_navigationbar.dart';
 
+import '../../../google_ml_kit/object_detector.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -21,8 +23,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
+  final eventController = Get.put(EventController());
   @override
   Widget build(BuildContext context) {
+    eventController.getEvents();
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
@@ -79,7 +83,13 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const EventContainer(),
+                GetBuilder<EventController>(builder: (context) {
+                  return eventController.eventList.isEmpty
+                      ? SizedBox()
+                      : EventContainer(
+                          eventModel: eventController.eventList[0],
+                        );
+                }),
                 const SizedBox(
                   height: defaultPadding,
                 ),

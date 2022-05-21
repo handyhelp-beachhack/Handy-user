@@ -23,13 +23,12 @@ class JobApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
+      print("result ${response.body}");
 
       if (jsonDecode(response.body)["response_code"] == 200) {
-        List<Map<String, dynamic>> decoded =
-            jsonDecode(response.body)["response"]["users"];
-        print("result $decoded");
-        jobs = decoded.map((e) => JobModel.fromMap(e)).toList();
+        var decoded = jsonDecode(response.body)["response"]["jobs"];
+        jobs = List.from(decoded.map((e) => JobModel.fromMap(e)).toList());
       } else {
         showToast(
             context: Get.overlayContext!,

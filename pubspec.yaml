@@ -57,6 +57,8 @@ dependencies:
   webview_flutter: ^3.0.2
   alan_voice: 3.0.0
   maps_launcher: ^2.0.1
+  shake: ^2.1.0
+  flutter_phone_direct_caller: ^2.1.1
  
 
 dev_dependencies:

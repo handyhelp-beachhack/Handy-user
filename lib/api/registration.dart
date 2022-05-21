@@ -30,7 +30,7 @@ class RegisterApi {
             headers: {"Content-Type": "application/json"},
             body: json.encode(body),
           )
-          .timeout(const Duration(seconds: 3));
+          .timeout(const Duration(seconds: 8));
 
       debugPrint("------------status code------------");
       debugPrint("${response.statusCode}");
@@ -95,7 +95,7 @@ class RegisterApi {
             headers: {"Content-Type": "application/json"},
             body: json.encode(body),
           )
-          .timeout(const Duration(seconds: 3));
+          .timeout(const Duration(seconds: 8));
 
       debugPrint("------------status code------------");
       debugPrint("${response.statusCode}");

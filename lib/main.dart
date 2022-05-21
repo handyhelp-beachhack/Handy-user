@@ -3,9 +3,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/screens/authentification/mobile_page.dart';
 import 'package:handy_beachhack/view/screens/home/home_page.dart';
+import 'package:shake/shake.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'google_ml_kit/image_labelling.dart';
@@ -100,6 +102,16 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    ShakeDetector detector = ShakeDetector.autoStart(
+      onPhoneShake: () {
+        _callNumber();
+        // Do stuff on phone shake
+      },
+      minimumShakeCount: 3,
+      shakeSlopTimeMS: 500,
+      shakeCountResetTime: 3000,
+      shakeThresholdGravity: 2.7,
+    );
     var initializationSettingsAndroid =
         new AndroidInitializationSettings('ic_launcher');
     var initialzationSettingsAndroid =
@@ -148,6 +160,11 @@ class _MyAppState extends State<MyApp> {
             });
       }
     });
+  }
+
+  _callNumber() async {
+    const number = "9947451753"; //set the number here
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   }
 
   @override
