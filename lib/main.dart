@@ -58,7 +58,8 @@ class _MyAppState extends State<MyApp> {
     /// Init Alan Button with project key from Alan Studio
     AlanVoice.addButton(
         "45d93525644cd0b345b526ab7c0f4f5e2e956eca572e1d8b807a3e2338fdd0dc/stage",
-        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
+        bottomMargin: 20,
+        topMargin: 0);
 
     /// Handle commands from Alan Studio
     AlanVoice.onEvent.add((event) {
@@ -83,11 +84,12 @@ class _MyAppState extends State<MyApp> {
         print("speech generation");
         break;
       case "ObjectDectectorView":
-        // Get.to(ObjectDectectorView());
+        Get.to(ObjectDetectorView());
         // whats infront of me
         print("speech generation");
         break;
       case "Back":
+        //go back
         Get.back();
         break;
     }
