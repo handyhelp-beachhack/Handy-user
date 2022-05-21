@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:handy_beachhack/api/registration.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
+import 'package:handy_beachhack/view/screens/home/home_page.dart';
 import 'package:handy_beachhack/view/widgets/toast/toast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -73,7 +75,7 @@ class UserApi {
   static Future<List<UserSimplify>> getFriends(String id) async {
     List<UserSimplify> friends = [];
 
-    String url = "http://app.geekstudios.tech/user/v1/request/get";
+    String url = "https://app.geekstudios.tech/user/v1/request/get";
     final uri = Uri.parse(url);
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? accessToken = pref.getString("token");
@@ -115,7 +117,7 @@ class UserApi {
   }
 
   static Future<void> sendFriendRequest(String id) async {
-    String url = "http://app.geekstudios.tech/user/v1/request/sent";
+    String url = "https://app.geekstudios.tech/user/v1/request/sent";
 
     final uri = Uri.parse(url);
 
@@ -130,7 +132,7 @@ class UserApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
 
       if (jsonDecode(response.body)["response_code"] == 200) {
         showToast(
@@ -139,6 +141,57 @@ class UserApi {
             title: jsonDecode(response.body)["message"],
             description: "",
             icon: Icons.check);
+      } else {
+        showToast(
+            context: Get.overlayContext!,
+            color: Colors.orange,
+            title: jsonDecode(response.body)["message"],
+            description: "",
+            icon: Icons.warning);
+        // return;
+      }
+    } catch (e) {
+      debugPrint("Error occured while registering $e");
+      // return 501;
+    }
+  }
+
+  static Future<void> updateUserDetails(String name, String guardianNumber,
+      String dob, String type, String bio, String gender) async {
+    String url = "https://app.geekstudios.tech/user/v1/profile/update";
+
+    final uri = Uri.parse(url);
+
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? accessToken = pref.getString("token");
+    final pos = await determinePosition();
+    try {
+      http.Response response = await http.post(
+        uri,
+        body: jsonEncode({
+          "name": name,
+          "guardian_phone": guardianNumber,
+          "dob": dob,
+          "lat": pos.latitude,
+          "lon": pos.longitude,
+          "bio": bio,
+          "gender": gender,
+          "handicap_type": type
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $accessToken"
+        },
+      ).timeout(const Duration(seconds: 8));
+      print(response.body);
+      if (jsonDecode(response.body)["response_code"] == 200) {
+        showToast(
+            color: primaryPurple,
+            context: Get.overlayContext!,
+            title: jsonDecode(response.body)["message"],
+            description: "",
+            icon: Icons.check);
+        Get.to(HomePage());
       } else {
         showToast(
             context: Get.overlayContext!,
@@ -212,7 +265,7 @@ class UserApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
       print("------------------------");
       print(response.body);
       if (jsonDecode(response.body)["response_code"] == 200) {

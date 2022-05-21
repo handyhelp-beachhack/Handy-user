@@ -21,11 +21,11 @@ class EventApi {
     required double lon,
   }) async {
     String url = "$baseUrl/user/v1/event/add";
-    print("url $url");
+
     final uri = Uri.parse(url);
     Map<String, dynamic> body = {
       "name": eventName,
-      "event_date": eventDate.toUtc(),
+      "event_date": eventDate.toString(),
       "description": description,
       "contact_number": mobile,
       "lat": lat,
@@ -58,7 +58,7 @@ class EventApi {
             title: jsonDecode(response.body)["message"],
             description: "",
             icon: Icons.check);
-        Get.to(HomePage());
+        Get.to(const HomePage());
       } else {
         showToast(
             context: Get.overlayContext!,

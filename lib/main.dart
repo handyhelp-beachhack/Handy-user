@@ -13,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'google_ml_kit/image_labelling.dart';
 import 'google_ml_kit/object_detector.dart';
 import 'package:handy_beachhack/view/screens/speechtotext/speech_to_text.dart';
+import 'view/screens/authentification/extra-datails/signup_page.dart';
 import 'view/screens/texttospeech/text_to_speech.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {

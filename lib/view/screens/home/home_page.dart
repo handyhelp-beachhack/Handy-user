@@ -12,6 +12,8 @@ import 'package:handy_beachhack/view/widgets/app_drawer.dart';
 import 'package:handy_beachhack/view/widgets/appbar.dart';
 import 'package:handy_beachhack/view/widgets/bottom_navigationbar.dart';
 
+import '../../../google_ml_kit/object_detector.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     HomeContainerOne(
                       size: size,
-                      ontap: () => {},
+                      ontap: () => {Get.to(ObjectDetectorView())},
                       assets: "search",
                       title: "Search It!\n(seach what\nyou want)",
                     ),

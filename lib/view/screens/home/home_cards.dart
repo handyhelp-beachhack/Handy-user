@@ -18,32 +18,36 @@ class HomeContainerOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: ontap,
-      child: Container(
-        height: (size.width - defaultPadding * 4) / 2,
-        width: (size.width - defaultPadding * 4) / 2,
-        decoration: BoxDecoration(
-          color: primaryPurple,
-          borderRadius: BorderRadius.circular(defaultPadding),
-        ),
-        padding: EdgeInsets.all(defaultPadding),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                color: white,
-                fontSize: 16,
+    return Semantics(
+      namesRoute: true,
+      label: "object detection",
+      child: InkWell(
+        onTap: ontap,
+        child: Container(
+          height: (size.width - defaultPadding * 4) / 2,
+          width: (size.width - defaultPadding * 4) / 2,
+          decoration: BoxDecoration(
+            color: primaryPurple,
+            borderRadius: BorderRadius.circular(defaultPadding),
+          ),
+          padding: EdgeInsets.all(defaultPadding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: white,
+                  fontSize: 16,
+                ),
               ),
-            ),
-            Image.asset(
-              "assets/png/$assets.png",
-              height: 70,
-            ),
-          ],
+              Image.asset(
+                "assets/png/$assets.png",
+                height: 70,
+              ),
+            ],
+          ),
         ),
       ),
     );

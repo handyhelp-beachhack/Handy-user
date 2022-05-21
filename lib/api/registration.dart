@@ -30,7 +30,7 @@ class RegisterApi {
             headers: {"Content-Type": "application/json"},
             body: json.encode(body),
           )
-          .timeout(const Duration(seconds: 3));
+          .timeout(const Duration(seconds: 8));
 
       debugPrint("------------status code------------");
       debugPrint("${response.statusCode}");
@@ -95,7 +95,7 @@ class RegisterApi {
             headers: {"Content-Type": "application/json"},
             body: json.encode(body),
           )
-          .timeout(const Duration(seconds: 3));
+          .timeout(const Duration(seconds: 8));
 
       debugPrint("------------status code------------");
       debugPrint("${response.statusCode}");
@@ -118,8 +118,6 @@ class RegisterApi {
               "token", jsonDecode(response.body)["response"]["accessToken"]);
           pref.setString(
               "mobile", jsonDecode(response.body)["response"]["user"]["phone"]);
-          pref.setString("country_code",
-              jsonDecode(response.body)["response"]["user"]["country_code"]);
 
           if (jsonDecode(response.body)["response"]["user"]
                   ["profile_completion"] ==

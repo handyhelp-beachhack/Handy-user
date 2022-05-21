@@ -23,7 +23,7 @@ class JobApi {
           "Content-Type": "application/json",
           "Authorization": "Bearer $accessToken"
         },
-      ).timeout(const Duration(seconds: 3));
+      ).timeout(const Duration(seconds: 8));
       print("result ${response.body}");
 
       if (jsonDecode(response.body)["response_code"] == 200) {
