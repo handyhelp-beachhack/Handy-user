@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
@@ -11,7 +10,6 @@ import 'package:handy_beachhack/view/screens/learning/learning_page.dart';
 import 'package:handy_beachhack/view/widgets/app_drawer.dart';
 import 'package:handy_beachhack/view/widgets/appbar.dart';
 import 'package:handy_beachhack/view/widgets/bottom_navigationbar.dart';
-import 'package:handy_beachhack/view/widgets/buttons/rounded_rect_primary.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
