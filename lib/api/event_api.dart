@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:handy_beachhack/models/event_model.dart';
 import 'package:handy_beachhack/view/constants/constants.dart';
 import 'package:handy_beachhack/view/screens/authentification/otp_page.dart';
 import 'package:handy_beachhack/view/screens/home/home_page.dart';
@@ -69,5 +70,41 @@ class EventApi {
     } catch (e) {
       debugPrint("Error occured while registering $e");
     }
+  }
+
+  static Future<List<EventModel>> getEvents() async {
+    List<EventModel> events = [];
+    String url = "https://app.geekstudios.tech/user/v1/event/get/600";
+    Uri uri = Uri.parse(url);
+
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? accessToken = pref.getString("token");
+    try {
+      http.Response response = await http.get(
+        uri,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $accessToken"
+        },
+      ).timeout(const Duration(seconds: 3));
+      print("result ${response.body}");
+
+      if (jsonDecode(response.body)["response_code"] == 200) {
+        var decoded = jsonDecode(response.body)["response"]["event"];
+        events = List.from(decoded.map((e) => EventModel.fromMap(e)).toList());
+      } else {
+        showToast(
+            context: Get.overlayContext!,
+            color: Colors.orange,
+            title: jsonDecode(response.body)["message"],
+            description: "",
+            icon: Icons.warning);
+        // return;
+      }
+    } catch (e) {
+      debugPrint("Error occured while fetching eveent $e");
+      // return 501;
+    }
+    return events;
   }
 }
